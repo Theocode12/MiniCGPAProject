@@ -68,7 +68,7 @@ Please follow these guidelines when contributing:
 
 1. Clone the Repository: Clone the forked repository to your local machine:
 	```bash
-	git clone https://github.com/your-username/project-name.git
+	git clone https://github.com/Theocode12/MiniCGPAProject.git
 	```
 
 1. Create a Branch: Create a new branch for your contribution:
