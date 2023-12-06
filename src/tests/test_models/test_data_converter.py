@@ -2,7 +2,6 @@ import io
 import unittest
 import os
 
-from pathlib import PosixPath
 from models.result_checker import CGPAChecker
 from models.data_converter import DataConverter
 
@@ -115,7 +114,9 @@ class TestDataConverter(unittest.TestCase):
 
 class DataConverterResultCheckerIntegrationTest(unittest.TestCase):
     def setUp(self):
-        self.filename = 'test_txt.csv'
+        cwd = os.getcwd()
+        path = '/tests/test_data/test_txt.csv'
+        self.filename = cwd + path if "/src" in cwd else cwd+'/src'+path
         self.converter = DataConverter()
 
     def test_convert_from_raw_template(self):
