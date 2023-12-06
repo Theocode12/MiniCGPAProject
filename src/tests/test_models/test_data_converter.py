@@ -2,8 +2,8 @@ import io
 import unittest
 import os
 
-from models.result_checker import CGPAChecker
-from models.data_converter import DataConverter
+from src.models.result_checker import CGPAChecker
+from src.models.data_converter import DataConverter
 
 from unittest.mock import patch, mock_open, call
 

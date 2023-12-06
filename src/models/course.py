@@ -76,7 +76,7 @@ class _Course:
     @grade.setter
     def grade(self, value: str) -> None:
         """Set the grade of the course"""
-        from models.course_collection import _CourseCollection
+        from ..models.course_collection import _CourseCollection
 
         if value is not None and type(value) is not str:
             raise TypeError("grade must be an string")

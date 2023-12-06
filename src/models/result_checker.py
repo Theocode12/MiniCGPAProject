@@ -1,5 +1,5 @@
 from typing import Dict, Union, List
-from models.course_collection import _CourseCollection
+from ..models.course_collection import _CourseCollection
 
 
 class CGPAChecker(_CourseCollection):

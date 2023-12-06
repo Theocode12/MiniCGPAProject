@@ -1,6 +1,6 @@
 import unittest
-from models.result_checker import CGPAChecker
-from tests.test_data.mock_data import data
+from src.models.result_checker import CGPAChecker
+from ..test_data.mock_data import data
 from unittest.mock import Mock
 
 

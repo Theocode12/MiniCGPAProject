@@ -1,5 +1,5 @@
 import unittest
-from models.course import _Course
+from src.models.course import _Course
 
 class CourseTest(unittest.TestCase):
     def setUp(self) -> None:

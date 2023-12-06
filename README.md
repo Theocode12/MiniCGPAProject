@@ -25,9 +25,14 @@ git clone https://github.com/Theocode12/MiniCGPAProject.git
   Dc.convert_raw_template("template_course.csv")
   ```
 CSV must be in the format :
-  ```
+
+```
 Year,Semester,Code,Title,Unit
-  ```
+```
+To run the main.py script make sure that the current directory is the project root folder and run
+```bash
+python3 CGPA_Checker/main.py
+```
 
 2 Track Your CGPA:
   - Leverage the CGPAChecker class to abstract CGPA calculations based on the converted data.
@@ -44,11 +49,11 @@ Retrieve CGPA for specific years and semesters, gaining insights into your acade
 + Progress Predictions: The tool enables you to make predictions about your future CGPA as you progress through your academic journey, providing valuable insights into your potential academic outcomes.
 
 ## Test
-To run test you must use the src directory indirectly:
+To run test you must run command from project root directory :
 ```bash
 	python3 -m unittest discover -s src
 ```
-or directly in the src directory
+or
 ```bash
 	python3 -m unittest discover
 ```

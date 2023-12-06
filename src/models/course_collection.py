@@ -3,7 +3,7 @@ from typing import ClassVar, Dict, Sequence, Union, List
 """
 This File contain Models for Course and Course_Collection Classes
 """
-from models.course import _Course
+from ..models.course import _Course
 
 
 class _CourseCollection:

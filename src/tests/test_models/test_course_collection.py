@@ -1,5 +1,5 @@
 import unittest
-from models.course_collection import _CourseCollection
+from src.models.course_collection import _CourseCollection
 
 
 
