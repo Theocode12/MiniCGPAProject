@@ -75,11 +75,12 @@ class CGPAChecker(_CourseCollection):
     # make setter and getters to validate data
     @property
     def data(self) -> dict:
-
+        """Gets the data"""
         return self.__data
 
     @data.setter
     def data(self, data):
+        """Validates and sets the data"""
         if not isinstance(data, dict):
             raise TypeError("data must be a dict")
 
@@ -152,6 +153,7 @@ class CGPAChecker(_CourseCollection):
         return self.cal_CGPA()
 
     def _check_session(self, year: str, semesters: Union[list, None] = None) -> None:
+        """Used to check and retrieve session data"""
         if semesters is None or len(semesters) == 0:
             semesters = ["semester 1", "semester 2"]
         for semester in semesters:
@@ -164,6 +166,7 @@ class CGPAChecker(_CourseCollection):
                 raise ValueError("{} Not part of Data".format(year))
 
     def _init_courses(self, courses: Dict) -> None:
+        """Initialise the courses object using the courses data"""
         for code, attr in courses.items():
             self.add_course(
                 code, attr.get("title"), int(attr.get("unit")), attr.get("grade")

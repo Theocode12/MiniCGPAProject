@@ -22,6 +22,7 @@ class _CourseCollection:
     def add_course(
         self, course_code, course_name: str, unit: int, grade: Union[str, None] = None
     ) -> _Course:
+        """Add a new course"""
         self.courses.append(_Course(course_code, course_name, unit, grade))
         self.cal_total_unit(unit)
         if grade is not None:
@@ -29,19 +30,24 @@ class _CourseCollection:
         return self.courses[-1]
 
     def cal_total_unit(self, unit: int) -> int:
+        """Calculates the total units of all the courses"""
         self.total_unit += unit
         return self.total_unit
 
     def cal_total_available_graded_unit(self, unit: int) -> int:
+        """Calulates the total unit for course which has grades"""
         self.available_graded_unit += unit
         return self.available_graded_unit
 
     def cal_CGPA(self) -> float:
+        """Calculates the CGPA for the courses which have grades. Returns float with two decimal places"""
         cum_grade_unit = 0  # cumulative grade unit
         self.available_graded_unit = 0
         for course in self.courses:
             if course.grade:
                 self.cal_total_available_graded_unit(course.unit)
-                cum_grade_unit += _CourseCollection.grade.get(course.grade, 0) * course.unit
+                cum_grade_unit += (
+                    _CourseCollection.grade.get(course.grade, 0) * course.unit
+                )
 
         return round(cum_grade_unit / self.available_graded_unit, 2)
