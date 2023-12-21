@@ -1,6 +1,7 @@
 from csv import DictReader, DictWriter, QUOTE_NONNUMERIC
 from typing import List, Dict, Any, Union
 
+
 class DataConverter:
     def __init__(self) -> None:
         self.data: Dict[str, Dict[str, Dict[str, Dict[str, Any]]]] = {}
@@ -45,7 +46,7 @@ class DataConverter:
         """
         while True:
             grade = input(msg)
-            if len(grade) < 1 or "A" <= grade.upper() <= "F":
+            if len(grade) == 1 and "A" <= grade.upper() <= "F":
                 break
             else:
                 print(
